@@ -16,7 +16,7 @@
         <div class="center">
           <img :src="images[imageIndex]" alt="">
           <div class="bullets">
-            <i v-for="i in images" class="fas fa-circle"></i>
+            <i v-for="(i, index) in images" v-bind:class="index == imageIndex ? 'active' : null" class="fas fa-circle"></i>
           </div>
         </div>
         <div @click="nextImg" class="right">

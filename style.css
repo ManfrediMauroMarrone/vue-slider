@@ -48,3 +48,7 @@ i {
   transform: translateX(-50%);
   color: white
 }
+
+.active{
+  color: grey;
+}
