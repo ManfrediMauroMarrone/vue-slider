@@ -46,7 +46,11 @@ i {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  color: white
+  color: white;
+}
+
+.bullets i{
+  margin: 0 10px;
 }
 
 .active{
