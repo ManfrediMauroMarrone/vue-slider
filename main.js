@@ -7,5 +7,26 @@ var app = new Vue({
       'https://steamuserimages-a.akamaihd.net/ugc/940586530515504757/CDDE77CB810474E1C07B945E40AE4713141AFD76/',
       'https://i.imgur.com/sjvtlq0.jpg',
       'https://images6.alphacoders.com/859/thumb-1920-859553.png'
+    ],
+
+    imageIndex: 0,
+  },
+
+  methods: {
+    nextImg() {
+      this.imageIndex += 1;
+
+      if (this.imageIndex >= this.images.length) {
+        this.imageIndex = 0
+      }
+    },
+
+    prevImg() {
+      this.imageIndex -= 1;
+
+      if (this.imageIndex < 0) {
+        this.imageIndex = this.images.length -1
+      }
+    }
   }
 })

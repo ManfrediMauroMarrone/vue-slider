@@ -11,12 +11,15 @@
     <div id="root">
       <div class="slider">
         <div class="left">
-          <i class="fas fa-arrow-left"></i>
+          <i @click="prevImg" class="fas fa-arrow-left"></i>
         </div>
         <div class="center">
-          <img :src="images[2]" alt="">
+          <img :src="images[imageIndex]" alt="">
+          <div class="bullets">
+            <i v-for="i in images" class="fas fa-circle"></i>
+          </div>
         </div>
-        <div class="right">
+        <div @click="nextImg" class="right">
           <i class="fas fa-arrow-right"></i>
 
         </div>
