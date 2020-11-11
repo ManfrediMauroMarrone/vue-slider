@@ -14,11 +14,15 @@ var app = new Vue({
 
   methods: {
     nextImg() {
-      this.imageIndex += 1;
+      setInterval(() => {
+        this.imageIndex += 1;
 
-      if (this.imageIndex >= this.images.length) {
-        this.imageIndex = 0
-      }
+        if (this.imageIndex >= this.images.length) {
+          this.imageIndex = 0
+        }
+
+
+      }, 2000)
     },
 
     prevImg() {
@@ -27,6 +31,31 @@ var app = new Vue({
       if (this.imageIndex < 0) {
         this.imageIndex = this.images.length -1
       }
+    },
+    imgChange(index) {
+      this.imageIndex = index;
     }
+  },
+
+  created() {
+    this.nextImg()
+  },
+});
+tempo = 0;
+
+let time = setInterval(function(){
+  tempo += 1;
+  console.log(tempo);
+  if (tempo === 5) {
+    clearInterval(time)
+    console.log('stop');
+
   }
-})
+}, 1000)
+
+// var i = 0;
+// var timer = setInterval(function() {
+//   console.log(++i);
+//   if (i === 5) clearInterval(timer);
+//   console.log('post-interval'); //this will still run after clearing
+// }, 1000);
